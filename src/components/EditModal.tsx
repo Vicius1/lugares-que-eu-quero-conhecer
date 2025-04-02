@@ -31,7 +31,7 @@ const EditModal: React.FC<EditModalProps> = ({ open, onClose, place, onSave }) =
   };
 
   return (
-    <Modal open={open} onClose={onClose}>
+    <Modal open={open} onClose={onClose} role="dialog">
       <Box
         sx={{
           position: "absolute",
@@ -48,6 +48,7 @@ const EditModal: React.FC<EditModalProps> = ({ open, onClose, place, onSave }) =
         {/* Botão de fechar */}
         <IconButton
           onClick={onClose}
+          aria-label="Fechar"
           sx={{
             position: "absolute",
             top: 10,

@@ -20,8 +20,8 @@ const PlaceCard: React.FC<Place> = ({ country, location, date, flag, onEdit, onD
       <div className="card-header">
         <img src={flag} alt={`Bandeira de ${country}`} className="flag" />
         <div className="card-actions">
-          <EditIcon className="icon" onClick={() => setIsEditing(true)} />
-          <CloseIcon className="icon" onClick={onDelete} />
+          <EditIcon className="icon" data-testid="EditIcon" onClick={() => setIsEditing(true)} />
+          <CloseIcon className="icon" data-testid="CloseIcon" onClick={onDelete} />
         </div>
       </div>
       <h3 className="country-name">{country.toUpperCase()}</h3>

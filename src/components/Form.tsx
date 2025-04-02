@@ -50,10 +50,10 @@ const Form: React.FC<FormProps> = ({ addPlace }) => {
   
 
   return (
-    <form onSubmit={handleSubmit} className="form">
+    <form onSubmit={handleSubmit} className="form" data-testid="place-form">
       <div className="input-group">
-        <label>País</label>
-        <select value={selectedCountry} onChange={handleCountryChange} required>
+        <label htmlFor="country-select">País</label>
+        <select value={selectedCountry} onChange={handleCountryChange} data-testid="country-select" required>
           <option value="">Selecione...</option>
           {countries.map((country, index) => (
             <option key={index} value={country.name}>
