@@ -37,14 +37,17 @@ const Form: React.FC<FormProps> = ({ addPlace }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedCountry || !location || !date) return;
-
-    addPlace({ country: selectedCountry, location, date, flag });
-
+  
+    const newPlace = { country: selectedCountry, location, date, flag };
+  
+    addPlace(newPlace);
+  
     setSelectedCountry("");
     setLocation("");
     setDate("");
     setFlag("");
   };
+  
 
   return (
     <form onSubmit={handleSubmit} className="form">
