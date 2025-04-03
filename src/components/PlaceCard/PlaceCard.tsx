@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import CloseIcon from "@mui/icons-material/Close";
-import EditModal from "./EditModal";
+import EditModal from "../EditModal/EditModal";
+import "./PlaceCard.css";
 
 interface Place {
   country: string;

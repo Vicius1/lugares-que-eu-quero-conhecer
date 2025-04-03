@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import PlaceCard from "../components/PlaceCard";
+import PlaceCard from "../components/PlaceCard/PlaceCard";
 
 const mockPlace = {
   country: "France",

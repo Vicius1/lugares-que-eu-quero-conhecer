@@ -15,7 +15,6 @@ describe("App Component", () => {
 
     render(<App />);
 
-    // Agora usando findByAltText para esperar o carregamento do logo
     const logo = await screen.findByAltText("Lugares que quero conhecer");
     expect(logo).toBeInTheDocument();
 

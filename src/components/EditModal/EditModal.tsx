@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import InputMask from "react-input-mask";
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
+import "./EditModal.css";
 
 interface EditModalProps {
   open: boolean;
@@ -17,7 +18,6 @@ const EditModal: React.FC<EditModalProps> = ({ open, onClose, place, onSave }) =
   const [location, setLocation] = useState(place.location);
   const [date, setDate] = useState(place.date);
 
-  // Sempre que o modal abrir, resetamos os valores para os originais
   useEffect(() => {
     if (open) {
       setLocation(place.location);
@@ -43,9 +43,9 @@ const EditModal: React.FC<EditModalProps> = ({ open, onClose, place, onSave }) =
           p: 4,
           boxShadow: 24,
           borderRadius: 2,
+          outline: "none",
         }}
       >
-        {/* Botão de fechar */}
         <IconButton
           onClick={onClose}
           aria-label="Fechar"

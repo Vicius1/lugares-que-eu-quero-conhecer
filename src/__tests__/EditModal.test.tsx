@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import EditModal from "../components/EditModal";
+import EditModal from "../components/EditModal/EditModal";
 
 describe("EditModal Component", () => {
   const mockOnClose = jest.fn();

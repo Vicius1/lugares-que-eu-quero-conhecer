@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Form from "./components/Form";
-import PlaceCard from "./components/PlaceCard";
+import Form from "./components/Form/Form";
+import PlaceCard from "./components/PlaceCard/PlaceCard";
 import logo from "./assets/logo.png";
 import "./App.css";
 
