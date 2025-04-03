@@ -1,3 +1,11 @@
 {
-  "places": []
+  "places": [
+    {
+      "id": "7a71",
+      "country": "American Samoa",
+      "location": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "date": "22/2222",
+      "flag": "https://flagcdn.com/w320/as.png"
+    }
+  ]
 }

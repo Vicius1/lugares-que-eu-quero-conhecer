@@ -27,7 +27,7 @@ const PlaceCard: React.FC<Place> = ({ country, location, date, flag, onEdit, onD
       </div>
       <h3 className="country-name">{country.toUpperCase()}</h3>
       <hr className="divider" />
-      <p>Local: {location}</p>
+      <p title={location}>Local: {location.length > 23 ? location.slice(0, 23) + "..." : location}</p>
       <p>Meta: {date}</p>
 
       <EditModal

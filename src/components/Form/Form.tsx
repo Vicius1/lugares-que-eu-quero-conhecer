@@ -3,7 +3,6 @@ import axios from "axios";
 import InputMask from "react-input-mask";
 import "./Form.css";
 
-
 interface Country {
   name: string;
   flags: { png: string };
@@ -25,7 +24,6 @@ const Form: React.FC<FormProps> = ({ addPlace }) => {
       .get("https://restcountries.com/v2/all?fields=name,flags")
       .then((response) => {
         setCountries(response.data);
-        console.log(response.data);
       })
       .catch((error) => console.error("Erro ao buscar países:", error));
   }, []);
@@ -38,8 +36,14 @@ const Form: React.FC<FormProps> = ({ addPlace }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!selectedCountry || !location || !date) return;
-  
+
+    const cleanedDate = date.replace(/_/g, "").trim();
+
+    if (cleanedDate.length < 7) {
+      alert("A data deve estar no formato mês/ano e conter todos os dígitos.");
+      return;
+    }
+
     const newPlace = { country: selectedCountry, location, date, flag };
   
     addPlace(newPlace);
@@ -50,12 +54,11 @@ const Form: React.FC<FormProps> = ({ addPlace }) => {
     setFlag("");
   };
   
-
   return (
     <form onSubmit={handleSubmit} className="form" data-testid="place-form">
       <div className="input-group">
         <label htmlFor="country-select">País</label>
-        <select value={selectedCountry} onChange={handleCountryChange} data-testid="country-select" required>
+        <select id="country-select" value={selectedCountry} onChange={handleCountryChange} data-testid="country-select" required>
           <option value="">Selecione...</option>
           {countries.map((country, index) => (
             <option key={index} value={country.name}>
@@ -66,8 +69,9 @@ const Form: React.FC<FormProps> = ({ addPlace }) => {
       </div>
 
       <div className="input-group ">
-        <label>Local</label>
+        <label htmlFor="location">Local</label>
         <input
+          id="location"
           type="text"
           placeholder="Digite o local que deseja conhecer"
           value={location}
@@ -77,17 +81,17 @@ const Form: React.FC<FormProps> = ({ addPlace }) => {
       </div>
 
       <div className="input-group">
-        <label>Meta</label>
+        <label htmlFor="date">Meta</label>
         <InputMask
+          id="date"
           mask="99/9999"
           placeholder="mês/ano"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          required
         />
       </div>
 
-        <button type="submit">Adicionar</button>
+      <button type="submit">Adicionar</button>
     </form>
   );
 };

@@ -17,7 +17,7 @@ interface EditModalProps {
 const EditModal: React.FC<EditModalProps> = ({ open, onClose, place, onSave }) => {
   const [location, setLocation] = useState(place.location);
   const [date, setDate] = useState(place.date);
-
+  
   useEffect(() => {
     if (open) {
       setLocation(place.location);
@@ -26,6 +26,17 @@ const EditModal: React.FC<EditModalProps> = ({ open, onClose, place, onSave }) =
   }, [open, place]);
 
   const handleSave = () => {
+    const cleanedDate = date.replace(/_/g, ""); // Remove os underscores gerados pelo input mask
+
+    if (!location.trim()) {
+    alert(`O campo "Local" não pode estar vazio.`);
+      return;
+    }
+
+    if (cleanedDate.length < 7) {
+      alert("A data deve estar no formato mês/ano e conter todos os dígitos.");
+      return;
+    }
     onSave({ location, date });
     onClose();
   };
@@ -64,8 +75,9 @@ const EditModal: React.FC<EditModalProps> = ({ open, onClose, place, onSave }) =
         </h2>
 
         <div className="input-group">
-          <label>Local</label>
+          <label htmlFor="location">Local</label>
           <input
+            id="location"
             type="text"
             className="modal-input"
             placeholder="Digite o local que deseja conhecer"
@@ -76,8 +88,9 @@ const EditModal: React.FC<EditModalProps> = ({ open, onClose, place, onSave }) =
         </div>
 
         <div className="input-group">
-          <label>Meta</label>
+          <label htmlFor="date">Meta</label>
           <InputMask
+            id="date"
             mask="99/9999"
             className="modal-input"
             placeholder="mês/ano"
