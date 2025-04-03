@@ -1,3 +1,18 @@
 {
-  "places": []
+  "places": [
+    {
+      "id": "3b93",
+      "country": "Albania",
+      "location": "aaaaaaa",
+      "date": "22/2222",
+      "flag": "https://flagcdn.com/w320/al.png"
+    },
+    {
+      "id": "396b",
+      "country": "United Kingdom of Great Britain and Northern Ireland",
+      "location": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "date": "22/2222",
+      "flag": "https://flagcdn.com/w320/gb.png"
+    }
+  ]
 }

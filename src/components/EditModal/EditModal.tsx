@@ -26,7 +26,7 @@ const EditModal: React.FC<EditModalProps> = ({ open, onClose, place, onSave }) =
   }, [open, place]);
 
   const handleSave = () => {
-    const cleanedDate = date.replace(/_/g, ""); // Remove os underscores gerados pelo input mask
+    const cleanedDate = date.replace(/_/g, "");
 
     if (!location.trim()) {
     alert(`O campo "Local" não pode estar vazio.`);
