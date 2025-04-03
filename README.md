@@ -39,6 +39,7 @@ Esse comando executará simultaneamente:
 - O React na porta 3000.
 #### Rodando os serviços separadamente
 Caso prefira iniciar os serviços manualmente, abra dois terminais e execute:
+
 Terminal 1: Iniciar o servidor JSON
 
 ```bash
