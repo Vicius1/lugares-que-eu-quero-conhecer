@@ -1,46 +1,54 @@
-# Getting Started with Create React App
+#  Lugares que eu quero conhecer
+   Esse projeto consiste em um sistema que permita o CRUD de lugares para se conhecer ao redor do mundo. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Funcionalidades
+- Adicionar um novo lugar com país, local e meta (mês/ano).
+- Editar o local e a meta de um card existente.
+- Excluir um card.
+- Listagem dos lugares adicionados, exibindo a bandeira do país e os dados informados.
 
-## Available Scripts
+## Tecnologias Utilizadas
+- **React** com **TypeScript**
+- **React Hooks**
+- **react-input-mask** para formatação do campo de data
+- **Rest Countries API** para obter a lista de países e suas bandeiras
+- **json-server** para simular uma API REST e persistência dos dados
+- **Jest** e **Testing Library** para testes automatizados
+- **concurrently** para maior praticidade na hora de executar o projeto
 
-In the project directory, you can run:
+## Como Executar o Projeto
 
-### `npm start`
+### 1. Clonar o Repositório
+```bash
+git clone https://github.com/Vicius1/lugares-que-eu-quero-conhecer.git
+cd lugares-que-eu-quero-conhecer
+```
+### 2. Instalar Dependências
+```bash
+npm install
+````
+### 3. Rodar o Projeto
+#### Rodando tudo com um único comando
+O projeto utiliza `json-server` para simular uma API REST. Para facilitar a execução do frontend e do backend ao mesmo tempo, foi configurado um script no `package.json` que usa `concurrently`.
+Para iniciar tudo com um único comando, basta rodar:
+```bash
+npm run dev
+```
+Esse comando executará simultaneamente:
+- O json-server na porta 5000.
+- O React na porta 3000.
+#### Rodando os serviços separadamente
+Caso prefira iniciar os serviços manualmente, abra dois terminais e execute:
+Terminal 1: Iniciar o servidor JSON
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+npm run server  
+```
+Terminal 2: Iniciar o frontend
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
+*Independentemente da forma escolhida para rodar o projeto:*
+- A aplicação estará disponível em http://localhost:3000/.
+- Os dados cadastrados podem ser acessados em formato JSON em http://localhost:5000/places.
