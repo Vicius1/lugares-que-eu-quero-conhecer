@@ -53,3 +53,13 @@ npm start
 *Independentemente da forma escolhida para rodar o projeto:*
 - A aplicação estará disponível em http://localhost:3000/.
 - Os dados cadastrados podem ser acessados em formato JSON em http://localhost:5000/places.
+
+### 4. Testes Automatizados
+
+O projeto utiliza **Jest** e **Testing Library** para a realização de testes automatizados, garantindo a confiabilidade das funcionalidades implementadas.
+
+Para rodar os testes, basta executar o seguinte comando:
+
+```bash
+npm test
+```
