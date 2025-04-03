@@ -1,5 +1,5 @@
 #  Lugares que eu quero conhecer
-   Esse projeto consiste em um sistema que permita o CRUD de lugares para se conhecer ao redor do mundo. 
+   Esse projeto consiste em um sistema que permite o CRUD de lugares para se conhecer ao redor do mundo. 
 
 ## Funcionalidades
 - Adicionar um novo lugar com país, local e meta (mês/ano).
@@ -27,30 +27,30 @@ cd lugares-que-eu-quero-conhecer
 ```bash
 npm install
 ````
-### 3. Rodar o Projeto
-#### Rodando tudo com um único comando
+### 3. Executar o Projeto
+#### Opção 1: Executando tudo com um único comando
 O projeto utiliza `json-server` para simular uma API REST. Para facilitar a execução do frontend e do backend ao mesmo tempo, foi configurado um script no `package.json` que usa `concurrently`.
-Para iniciar tudo com um único comando, basta rodar:
+Para iniciar tudo com um único comando, execute:
 ```bash
 npm run dev
 ```
 Esse comando executará simultaneamente:
 - O json-server na porta 5000.
 - O React na porta 3000.
-#### Rodando os serviços separadamente
+#### Opção 2: Executando os serviços separadamente
 Caso prefira iniciar os serviços manualmente, abra dois terminais e execute:
 
-Terminal 1: Iniciar o servidor JSON
+**Terminal 1:** Iniciar o servidor JSON
 
 ```bash
 npm run server  
 ```
-Terminal 2: Iniciar o frontend
+**Terminal 2:** Iniciar o frontend
 
 ```bash
 npm start
 ```
-*Independentemente da forma escolhida para rodar o projeto:*
+*Independentemente da forma escolhida para executar o projeto:*
 - A aplicação estará disponível em http://localhost:3000/.
 - Os dados cadastrados podem ser acessados em formato JSON em http://localhost:5000/places.
 
@@ -58,7 +58,7 @@ npm start
 
 O projeto utiliza **Jest** e **Testing Library** para a realização de testes automatizados, garantindo a confiabilidade das funcionalidades implementadas.
 
-Para rodar os testes, basta executar o seguinte comando:
+Para executar os testes, utilize o comando:
 
 ```bash
 npm test
