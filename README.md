@@ -1,5 +1,7 @@
 #  Lugares que eu quero conhecer
    Esse projeto consiste em um sistema que permite o CRUD de lugares para se conhecer ao redor do mundo. 
+   
+![image](https://github.com/user-attachments/assets/caf43bb6-0460-47d8-b564-08c20cd40e94)
 
 ## Funcionalidades
 - Adicionar um novo lugar com país, local e meta (mês/ano).
